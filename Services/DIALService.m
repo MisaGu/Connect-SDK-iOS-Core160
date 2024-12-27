@@ -204,7 +204,7 @@ static NSMutableArray *registeredApps = nil;
             [request addValue:@"text/plain;charset=\"utf-8\"" forHTTPHeaderField:@"Content-Type"];
             [request setHTTPBody:payloadData];
 
-            DLog(@"[OUT] : %@ \n %@", [request allHTTPHeaderFields], payload);
+//            DLog(@"[OUT] : %@ \n %@", [request allHTTPHeaderFields], payload);
         } else
         {
             [request addValue:@"0" forHTTPHeaderField:@"Content-Length"];
@@ -214,14 +214,14 @@ static NSMutableArray *registeredApps = nil;
         [request setHTTPMethod:command.HTTPMethod];
         [request addValue:@"0" forHTTPHeaderField:@"Content-Length"];
 
-        DLog(@"[OUT] : %@", [request allHTTPHeaderFields]);
+//        DLog(@"[OUT] : %@", [request allHTTPHeaderFields]);
     }
 
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
     {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
 
-        DLog(@"[IN] : %@", [httpResponse allHeaderFields]);
+//        DLog(@"[IN] : %@", [httpResponse allHeaderFields]);
 
         if (connectionError)
         {
@@ -274,7 +274,7 @@ static NSMutableArray *registeredApps = nil;
                 NSError *xmlError;
                 NSDictionary *responseXML = [CTXMLReader dictionaryForXMLData:data error:&xmlError];
 
-                DLog(@"[IN] : %@", responseXML);
+//                DLog(@"[IN] : %@", responseXML);
 
                 if (xmlError)
                 {

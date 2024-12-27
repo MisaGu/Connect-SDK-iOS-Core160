@@ -213,13 +213,13 @@
         _secondWindow = [[AirPlayServiceWindow alloc] initWithFrame:screenBounds];
         _secondWindow.screen = secondScreen;
 
-        DLog(@"Displaying content with bounds %@", NSStringFromCGRect(screenBounds));
+//        DLog(@"Displaying content with bounds %@", NSStringFromCGRect(screenBounds));
     }
 }
 
 - (void) hScreenConnected:(NSNotification *)notification
 {
-    DLog(@"%@", notification);
+//    DLog(@"%@", notification);
 
     if (!self.secondWindow)
         [self checkForExistingScreenAndInitializeIfPresent];
@@ -229,7 +229,7 @@
 
 - (void) hScreenDisconnected:(NSNotification *)notification
 {
-    DLog(@"%@", notification);
+//    DLog(@"%@", notification);
 
     if (_connecting || _connected)
         [self disconnect];
@@ -314,7 +314,7 @@
         }
     }
 
-    DLog(@"Created a web view with bounds %@", NSStringFromCGRect(self.secondWindow.bounds));
+//    DLog(@"Created a web view with bounds %@", NSStringFromCGRect(self.secondWindow.bounds));
 
     _webAppWebView = [[UIWebView alloc] initWithFrame:self.secondWindow.bounds];
     _webAppWebView.allowsInlineMediaPlayback = YES;
@@ -461,7 +461,7 @@
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    DLog(@"%@", error.localizedDescription);
+//    DLog(@"%@", error.localizedDescription);
 
     if (self.launchFailureBlock)
         self.launchFailureBlock(error);
@@ -485,7 +485,7 @@
         if (jsonError || !messageObject)
             messageObject = jsonString;
 
-        DLog(@"Got p2p message from web app:\n%@", messageObject);
+//        DLog(@"Got p2p message from web app:\n%@", messageObject);
 
         if (self.activeWebAppSession)
         {
@@ -511,7 +511,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    DLog(@"%@", webView.request.URL.absoluteString);
+//    DLog(@"%@", webView.request.URL.absoluteString);
 
     if (self.launchSuccessBlock)
         self.launchSuccessBlock(nil);
@@ -522,7 +522,7 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    DLog(@"%@", webView.request.URL.absoluteString);
+//    DLog(@"%@", webView.request.URL.absoluteString);
 }
 
 @end

@@ -166,7 +166,7 @@
 
     if (xmlParseError)
     {
-        DLog(@"XML Parse error %@", xmlParseError.description);
+//        DLog(@"XML Parse error %@", xmlParseError.description);
         return;
     }
 
@@ -174,7 +174,7 @@
 
     if (!eventXMLStringEncoded)
     {
-        DLog(@"Received event with no LastChange data, ignoring...");
+//        DLog(@"Received event with no LastChange data, ignoring...");
         return;
     }
 
@@ -184,7 +184,7 @@
 
     if (eventXMLParseError)
     {
-        DLog(@"Could not parse event into usable format, ignoring… (%@)", eventXMLParseError);
+//        DLog(@"Could not parse event into usable format, ignoring… (%@)", eventXMLParseError);
         return;
     }
 
@@ -193,7 +193,7 @@
 
 - (void) handleEvent:(NSDictionary *)eventInfo forSubscriptions:(NSArray *)subscriptions
 {
-    DLog(@"eventInfo: %@", eventInfo);
+//    DLog(@"eventInfo: %@", eventInfo);
 
     [subscriptions enumerateObjectsUsingBlock:^(ServiceSubscription *subscription, NSUInteger subIdx, BOOL *subStop) {
         [subscription.successCalls enumerateObjectsUsingBlock:^(SuccessBlock success, NSUInteger successIdx, BOOL *successStop) {

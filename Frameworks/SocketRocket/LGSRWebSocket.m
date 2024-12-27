@@ -1647,7 +1647,7 @@ static inline void LGSRFastLog(NSString *format, ...)  {
     
     va_end(arg_list);
     
-    DLog(@"[LGSR] %@", formattedString);
+//    DLog(@"[LGSR] %@", formattedString);
 #endif
 }
 

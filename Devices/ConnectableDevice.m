@@ -297,11 +297,11 @@
             if (existingService.connected)
                 [existingService disconnect];
 
-            DLog(@"Removing %@ (%@)", existingService.serviceDescription.friendlyName, existingService.serviceName);
+//            DLog(@"Removing %@ (%@)", existingService.serviceDescription.friendlyName, existingService.serviceName);
             [self removeServiceWithId:existingService.serviceName];
         } else
         {
-            DLog(@"Ignoring %@ (%@)", service.serviceDescription.friendlyName, service.serviceName);
+//            DLog(@"Ignoring %@ (%@)", service.serviceDescription.friendlyName, service.serviceName);
             return;
         }
     }

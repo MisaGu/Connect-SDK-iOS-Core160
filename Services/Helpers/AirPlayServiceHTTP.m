@@ -172,12 +172,12 @@
             [request addRequestHeader: @"Content-Length" value:@"0"];
         }
 
-        DLog(@"[OUT] : %@ \n %@", request.requestHeaders, payload);
+//        DLog(@"[OUT] : %@ \n %@", request.requestHeaders, payload);
     } else
     {
         [request addRequestHeader: @"Content-Length" value:@"0"];
 
-        DLog(@"[OUT] : %@", request.requestHeaders);
+//        DLog(@"[OUT] : %@", request.requestHeaders);
     }
 
     [request setRequestMethod:command.HTTPMethod];

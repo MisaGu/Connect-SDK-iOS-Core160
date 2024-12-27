@@ -78,7 +78,7 @@
             return;
 
         if (connectionError) {
-            DLog(@"Connection error to %@: %@", self.targetURL, connectionError);
+//            DLog(@"Connection error to %@: %@", self.targetURL, connectionError);
         }
 
         const BOOL noDataIsAvailable = !data && connectionError && !response;

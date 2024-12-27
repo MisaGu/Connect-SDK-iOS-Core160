@@ -274,7 +274,7 @@
 
     NSString *sendString = [self writeToJSON:sendData];
 
-    DLog(@"[OUT] : %@", sendString);
+//    DLog(@"[OUT] : %@", sendString);
 
     [_socket send:sendString];
 
@@ -313,7 +313,7 @@
         {
             [_commandQueue enumerateObjectsUsingBlock:^(NSString *sendString, NSUInteger idx, BOOL *stop)
                     {
-                        DLog(@"[OUT] : %@", sendString);
+//                        DLog(@"[OUT] : %@", sendString);
 
                         [_socket send:sendString];
                     }];
@@ -343,7 +343,7 @@
 
     NSString *sendString = [self encodeData:registerInfo andAddress:nil withId:dataId];
 
-    DLog(@"[OUT] : %@", sendString);
+//    DLog(@"[OUT] : %@", sendString);
 
     [_socket send:sendString];
 
@@ -469,7 +469,7 @@
 {
     NSDictionary *decodeData = [self decodeData:message];
 
-    DLog(@"[IN] : %@", decodeData);
+//    DLog(@"[IN] : %@", decodeData);
 
     if (self.delegate && [self.delegate respondsToSelector:@selector(socket:didReceiveMessage:)])
     {
@@ -671,7 +671,7 @@
 
     if (_socket.readyState == LGSR_OPEN)
     {
-        DLog(@"[OUT] : %@", payload);
+//        DLog(@"[OUT] : %@", payload);
 
         [_socket send:payload];
 

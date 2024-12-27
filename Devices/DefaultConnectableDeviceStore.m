@@ -76,7 +76,7 @@
 
         if (error)
         {
-            DLog(@"Experienced error loading file: %@", error.localizedDescription);
+//            DLog(@"Experienced error loading file: %@", error.localizedDescription);
             return;
         }
 
@@ -89,7 +89,7 @@
 
         if (error)
         {
-            DLog(@"Experienced error parsing file: %@", error.localizedDescription);
+//            DLog(@"Experienced error parsing file: %@", error.localizedDescription);
             return;
         }
 
@@ -369,7 +369,7 @@
         
         if (jsonError)
         {
-            DLog(@"Failed to parse with error: %@", jsonError.localizedDescription);
+//            DLog(@"Failed to parse with error: %@", jsonError.localizedDescription);
             _waitToWrite = NO;
             return;
         }
@@ -379,7 +379,7 @@
 
         if (writeError)
         {
-            DLog(@"Failed to write with error: %@", writeError.localizedDescription);
+//            DLog(@"Failed to write with error: %@", writeError.localizedDescription);
             _waitToWrite = NO;
             return;
         }
